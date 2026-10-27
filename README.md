@@ -23,4 +23,21 @@ body{font-family:system-ui;background:#f5f5f5;margin:0}
 <script>
 const mobiles = ["iPhone 14 Pro Max","iPhone 13","Samsung S23 Ultra","Samsung A32","Samsung A12","Infinix Hot 10","Infinix Note 12","Tecno Spark 8","Tecno Camon 19","Redmi Note 12","Redmi 10A","Vivo Y21","Vivo Y33s","Oppo A16","Oppo F21","Realme C35","Realme 9 Pro","Nokia G21","Nokia 105","OnePlus Nord 2","iPhone 12","iPhone 11","Samsung A52","Samsung A23","Infinix Zero 5G","Tecno Pova 2","Redmi Note 11","Vivo Y15s","Oppo A57","Realme C21","Samsung S22","iPhone X","iPhone 8 Plus","Samsung A03s","Infinix Smart 6","Tecno Spark 7","Redmi 9C","Vivo Y01","Oppo A16e","Realme Narzo 50","OnePlus 9","Samsung M11","Infinix Hot 12","Tecno Camon 18","Redmi Note 10 Pro","Vivo V23","Oppo Reno 6","Realme GT Master","Nokia 1100","Honor X9"];
 const container = document.getElementById('products');
-mobiles.forEach((name
+mobiles.forEach((name, i) => {
+  let price = 25000 + (i * 1234);
+  let msg = `Assalam o Alaikum Chaman Bhai! Mujhe ye mobile chahiye: ${name} - Rs.${price} - Order Now: ${i+1}`;
+  let link = `https://wa.me/923056814132?text=${encodeURIComponent(msg)}`;
+  container.innerHTML += `
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&h=300&fit=crop" alt="${name}">
+      <h3>${name}</h3>
+      <div class="price">Rs. ${price.toLocaleString()}</div>
+      <a href="${link}" target="_blank" style="text-decoration:none">
+        <button class="btn">Order Now</button>
+      </a>
+    </div>
+  `;
+});
+</script>
+</body>
+</html>
